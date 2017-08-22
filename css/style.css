@@ -1,9 +1,39 @@
-#num ,#num2{
+#num ,#num2 {
   color:red;
+    font-family: 'Sedgwick Ave Display', cursive;
 }
 
 h1, h2 {
   font-size: 4em;
-  font-family: 'VT323', monospace;
+
+    font-family: 'Courgette', cursive;
   color:green;
 }
+
+#projectTitle{
+    font-size: 4em;
+    font-family: 'Dancing Script', cursive;
+
+}
+
+#breakTitle ,#sessionTitle ,#sessionMinus ,#sessionPlus ,#breakMinus ,#breakPlus{
+
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+ /* fonts and styling done */
+
+h2{
+    display: inline;
+}
+
+#start,#reset ,#sessionMinus ,#sessionPlus ,#breakMinus ,#breakPlus{
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+
+}
+
+
+
+
+
