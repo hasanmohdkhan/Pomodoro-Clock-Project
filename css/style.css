@@ -27,7 +27,7 @@ h2{
 }
 
 #start,#reset ,#sessionMinus ,#sessionPlus ,#breakMinus ,#breakPlus{
-    margin-top: 20px;
+    margin-top: 15px;
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
 
