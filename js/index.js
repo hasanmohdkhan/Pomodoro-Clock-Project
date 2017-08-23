@@ -20,6 +20,7 @@ $(document).ready(function () {
     $("#start").click(function () {
 
         var counter = setInterval(timer , 1000);
+        count*=60;
         function timer() {
             // HIDE BUTTONS
             $("#start , #sessionPlus , #sessionMinus ,#breakMinus ,#breakPlus,#breakTitle ,#num2 ,#reset ").hide();
@@ -34,34 +35,54 @@ $(document).ready(function () {
                   $("#sessionTitle,#num").hide();
 
                   var startBreak = setInterval(breakTimer , 1000);
+                  breakCount*=60;
               }
+              //logic to format TIME
+            if(count % 60 >= 10)
+            {
+              $("#num").html(Math.floor(count/60) + ":" +count%60);
 
-             $("#num").html(count);
+            }
+
+            else
+            {
+                $("#num").html(Math.floor(count/60) + ":"+ "0"+count%60);
+            }
+
+            // **** END logic to format TIME
+
+
+
 
               function breakTimer() {
                   $("#breakTitle").html("Break Timer: ");
-                $("#breakTitle, #num2").show();
-                  breakCount -= 1;
-                  $("#num2").html(breakCount);
+                      $("#breakTitle, #num2").show();
+                      breakCount -= 1;
+                      $("#num2").html(breakCount);
+                      console.log(breakCount);
 
-                  console.log(breakCount);
                 if (breakCount === 0)
                 {
-                   breakAudio.play();
-                   clearInterval(startBreak);
-
+                     breakAudio.play();
+                     clearInterval(startBreak);
                      breakCount=5;
-                     $("#num2").html(breakCount);
-                     $("#breakTitle").html("Break Time ");
-
-                    $("#start , #sessionPlus , #sessionMinus ,#breakMinus ,#breakPlus,#breakTitle ,#sessionTitle,#num2 ,#num,#reset").show();
-
-
-
-
-
-
+                     $("#num2").html(breakCount).hide();
+                     $("#breakTitle").html("Break Time ").hide();
+                     $("#reset").show();
                 }
+
+                  if(breakCount % 60 >= 10)
+                  {
+                      $("#num2").html(Math.floor(breakCount/60) + ":" +breakCount%60);
+
+                  }
+
+                  else
+                  {
+                      $("#num2").html(Math.floor(breakCount/60) + ":"+ "0"+breakCount%60);
+                  }
+
+                  // **** END logic to format TIME
 
 
 
@@ -77,6 +98,41 @@ $(document).ready(function () {
     /*  END
      *  FUNCTION FOR START BUTTON WHEN TIMER FINISHED THEN STOP IT
      * */
+
+
+    /*
+        Here Logic for Reset Button
+     */
+
+
+    $("#reset").click(
+        function () {
+            console.log("Reset ");
+            count=5;
+            breakCount=5;
+            $("#num").html("5");
+            $("#num2").html("5");
+
+            $("#start , #sessionPlus , #sessionMinus ,#breakMinus ,#breakPlus,#breakTitle ,#sessionTitle,#num2 ,#num,#reset").show();
+             $("#reset").hide();
+        }
+
+
+    );
+
+
+
+
+
+    /* END
+       Here Logic for Reset Button
+     */
+
+
+
+
+
+
 
 
 
@@ -101,7 +157,7 @@ $(document).ready(function () {
   // Function for plusSession button
 
     $("#sessionPlus").click(function () {
-
+        $("#reset").show();
             count +=5;
             console.log(count);
             $("#num").html(count);

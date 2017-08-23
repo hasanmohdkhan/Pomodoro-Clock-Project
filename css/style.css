@@ -1,19 +1,33 @@
+body{
+
+    margin:20px;
+    background-color:wheat;
+    border-bottom-left-radius: 10px;
+}
+
+
 #num ,#num2 {
-  color:red;
+    color:red;
     font-family: 'Sedgwick Ave Display', cursive;
 }
 
 h1, h2 {
-  font-size: 4em;
 
+    font-size: 4em;
     font-family: 'Courgette', cursive;
-  color:green;
+    color:green;
 }
 
 #projectTitle{
     font-size: 4em;
     font-family: 'Dancing Script', cursive;
+    color: #1f13e6;
 
+}
+
+#author{
+
+    font-size:large;
 }
 
 #breakTitle ,#sessionTitle ,#sessionMinus ,#sessionPlus ,#breakMinus ,#breakPlus{
