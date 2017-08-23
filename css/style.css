@@ -28,6 +28,7 @@ h1, h2 {
 #author{
 
     font-size:large;
+    color: mediumpurple;
 }
 
 #breakTitle ,#sessionTitle ,#sessionMinus ,#sessionPlus ,#breakMinus ,#breakPlus{
@@ -44,6 +45,7 @@ h2{
     margin-top: 15px;
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
+
 
 }
 
